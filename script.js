@@ -78,7 +78,6 @@ function cityWeather(cityName) {
                 $("#uvIndex").css("background-color", "purple");
             }
 
-
             $("#uvIndex").append("UV Index: ", displayUVIndex);
 
 

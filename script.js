@@ -1,6 +1,4 @@
 
-
-
 // Current City Weather Function
 
 function cityWeather(cityName) {
@@ -35,6 +33,47 @@ function cityWeather(cityName) {
 
 
 
-    });
-}
-        
+
+
+        // UV Index
+        var queryURLUVIndex = "http://api.openweathermap.org/data/2.5/uvi?" + "lat=" + lat + "&lon=" + lon + "&appid=" + apiKey;
+        $("#uvIndex").empty();
+        $.ajax({
+            url: queryURLUVIndex,
+            method: 'GET'
+        }).then(function (response) {
+
+
+            var displayUVIndex = response.value;
+
+            if (displayUVIndex <= 2) {
+                $("#uvIndex").css("background-color", "green");
+            } else if (displayUVIndex > 2 && displayUVIndex <= 5) {
+                $("#uvIndex").css("background-color", "yellow");
+            } else if (displayUVIndex > 5 && displayUVIndex <= 7) {
+                $("#uvIndex").css("background-color", "orange");
+            } else if (displayUVIndex > 7 && displayUVIndex <= 10) {
+                $("#uvIndex").css("background-color", "red");
+            } else if (displayUVIndex >= 11) {
+                $("#uvIndex").css("background-color", "purple");
+            }
+
+            $("#uvIndex").append("UV Index: ", displayUVIndex);
+
+
+
+
+        })
+
+    })
+
+
+};
+
+
+
+
+
+
+
+

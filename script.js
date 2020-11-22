@@ -4,7 +4,7 @@ var myArray = localStorage.getItem("city") ? JSON.parse(localStorage.getItem("ci
 function displayHistory() {
     $(".list-group").empty();
     for (var i = 0; i < myArray.length; i++) {
-          
+
         var cityHistory = $(`<a href="#" class="list-group-item list-group-item-action w-100"></a>`);
         cityHistory.text(myArray[i]);
         $(".list-group").prepend(cityHistory);
@@ -158,12 +158,21 @@ $("#search-button").on("click", function () {
 
 });
 
+// Display last searched city on load
 
+function pageLoad() {
+    var cityKey = JSON.parse(localStorage.getItem("city"));
+    var onPageCity = cityKey[cityKey.length - 1];
+    console.log(onPageCity);
+
+    cityWeather(onPageCity);
+    weekForecast(onPageCity);
+}
 
 
 
 displayHistory();
-
+pageLoad();
 
 
 

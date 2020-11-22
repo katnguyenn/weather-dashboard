@@ -1,3 +1,21 @@
+// Display search history
+var myArray = localStorage.getItem("city") ? JSON.parse(localStorage.getItem("city")) : [];
+
+function displayHistory() {
+    $(".list-group").empty();
+    for (var i = 0; i < myArray.length; i++) {
+          
+        var cityHistory = $(`<a href="#" class="list-group-item list-group-item-action w-100"></a>`);
+        cityHistory.text(myArray[i]);
+        $(".list-group").prepend(cityHistory);
+
+    }
+    $(".list-group-item").on("click", function () {
+        var cityName = $(this).text();
+        cityWeather(cityName);
+        weekForecast(cityName);
+    })
+}
 
 
 // Current City Weather Function
@@ -129,6 +147,9 @@ $("#search-button").on("click", function () {
     localStorage.setItem("city", JSON.stringify(myArray));
 
 
+    displayHistory();
+
+
 
     event.preventDefault();
     cityWeather(cityName);
@@ -141,6 +162,7 @@ $("#search-button").on("click", function () {
 
 
 
+displayHistory();
 
 
 

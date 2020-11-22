@@ -1,4 +1,5 @@
 
+
 // Current City Weather Function
 
 function cityWeather(cityName) {
@@ -115,6 +116,28 @@ function weekForecast(cityName) {
 
     })
 }
+
+
+
+// Saved searches
+
+$("#search-button").on("click", function () {
+    var cityName = $("#searchforacity").val();
+    myArray.push(cityName);
+
+    console.log(myArray);
+    localStorage.setItem("city", JSON.stringify(myArray));
+
+
+
+    event.preventDefault();
+    cityWeather(cityName);
+    weekForecast(cityName);
+    $("#searchforacity").val("");
+
+});
+
+
 
 
 

@@ -54,6 +54,7 @@ function cityWeather(cityName) {
 
 
 
+
         // UV Index
         var queryURLUVIndex = "http://api.openweathermap.org/data/2.5/uvi?" + "lat=" + lat + "&lon=" + lon + "&appid=" + apiKey;
         $("#uvIndex").empty();
@@ -77,8 +78,8 @@ function cityWeather(cityName) {
                 $("#uvIndex").css("background-color", "purple");
             }
 
-            $("#uvIndex").append("UV Index: ", displayUVIndex);
 
+            $("#uvIndex").append("UV Index: ", displayUVIndex);
 
 
 

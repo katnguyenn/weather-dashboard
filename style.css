@@ -1,0 +1,74 @@
+html, body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+.card-title {
+    text-align: center;
+    color: white;
+    
+}
+
+.card-main {
+    background-color: #560505;
+    padding: 20px;
+}
+
+.btn {
+    background-color: #B4CBCB;
+    border: #B4CBCB;
+    position: relative;
+    right: 50%;
+}
+
+.btn:hover,
+.btn:visited {
+    background-color: #560505;
+}
+
+
+.card-text {
+    font-size: 14px;
+    
+}
+
+.card-body {
+    background-color: #B4CBCB;
+    
+}
+
+#cityName {
+    font-size: 30px;
+}
+
+.line {
+    display: flex;
+}
+
+#displayCurrentDate {
+
+    padding-top: 10px;
+    font-size: 20px;
+
+}
+
+#uvIndex {
+    width: 15%;
+}
+
+#cityName,
+#displayCurrentDate,
+#weatherIcon, 
+#temperature,
+#humidity,
+#windSpeed,
+#uvIndex {
+    padding-left: 10px;
+}
+
+
+#forecast {
+    padding: 10px;
+}

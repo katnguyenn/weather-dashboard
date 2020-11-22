@@ -72,6 +72,58 @@ function cityWeather(cityName) {
 
 
 
+// // 5 Day Forecast
+function weekForecast(cityName) {
+    var apiKey = "61787e817d55d5dd372b8e735878418e";
+    var queryURLFiveDay = "https://api.openweathermap.org/data/2.5/forecast?q=" + cityName + "&units=imperial&appid=" + apiKey;
+
+
+    $.ajax({
+        url: queryURLFiveDay,
+        method: 'GET'
+    }).then(function (response) {
+        console.log(response)
+        var weekDate = response.list;
+
+
+        $("#fiveday").empty();
+        for (var i = 0; i < weekDate.length; i++) {
+            if (weekDate[i].dt_txt.includes("00:00:00")) {
+
+                console.log(weekDate[i])
+                var card = `
+                    
+            <div class="col-sm-2 mb-4">
+            <div class="card">
+              <div class="card-body" id="forecast">
+                <span class="card-title" id="date"> ${moment(weekDate[i].dt, "X").format("MM/DD/YYYY")} </span>
+                <div id="date1-icon"><img src="http://openweathermap.org/img/wn/${weekDate[i].weather[0].icon}.png"></div>
+                <p class="card-text" id="date-temp">Temp: ${weekDate[i].main.temp + "℉"}</p>
+                <p class="card-text" id="date-humidity">Humidity: ${weekDate[i].main.humidity + "%"}</p>
+              </div>
+            </div>
+          </div>
+                    `
+
+                $("#fiveday").append(card);
+
+
+            }
+        }
+
+
+
+    })
+}
+
+
+
+
+
+
+
+
+
 
 
 

@@ -16,17 +16,13 @@ html, body {
     padding: 20px;
 }
 
-.btn {
+#search-button {
     background-color: #B4CBCB;
     border: #B4CBCB;
     position: relative;
     right: 50%;
 }
 
-.btn:hover,
-.btn:visited {
-    background-color: #560505;
-}
 
 
 .card-text {

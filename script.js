@@ -141,6 +141,11 @@ function weekForecast(cityName) {
 
 $("#search-button").on("click", function () {
     var cityName = $("#searchforacity").val();
+
+    if(!cityName) {
+        return;
+    } else {
+
     myArray.push(cityName);
 
     console.log(myArray);
@@ -151,10 +156,12 @@ $("#search-button").on("click", function () {
 
 
 
-    event.preventDefault();
+   
     cityWeather(cityName);
     weekForecast(cityName);
     $("#searchforacity").val("");
+
+    }
 
 });
 

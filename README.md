@@ -20,3 +20,5 @@ For this application, users are able to type in a city to retrieve weather data,
 
 
 [Weather Dashboard](https://katnguyenn.github.io/weather-dashboard/index.html)
+
+[LinkedIn](https://www.linkedin.com/in/katherine-nguyen-205a7b13a/)
